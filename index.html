@@ -26,22 +26,25 @@
       nav img {
         width: 100%;
       }
+
+      /* Styles ajoutés pour l'unification de la couleur de fond (jumbotron)
+      et la mise en forme ronde des boutons (btn)
+      pas d'autres modifications css */
       .jumbotron {
         background-color: #eef;
         margin-bottom: 0;
       }
 
-
+      .btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        margin-top: 15px;
+      }
 
       /* Styles pour les smartphones */
       #left, #side1, #side2 {
         padding: 10px 10px 0 10px;
-      }
-      .btn {
-        width: 40px;
-        height: 40px;
-        border-radius: 20px;
-        margin-top: 10px;
       }
 
       /* Styles pour les tablettes */
@@ -55,12 +58,6 @@
         #side2 {
           padding: 10px 0 0 5px;
         }
-        .btn {
-          width: 50px;
-          height: 50px;
-          border-radius: 25px;
-          margin-top: 15px;
-        }
       }
 
       /* Styles pour les écrans moyens et grands */
@@ -68,25 +65,32 @@
         #side1, #side2 {
           padding: 0 0 10px 10px;
         }
-        .btn {
-          width: 50px;
-          height: 50px;
-          border-radius: 25px;
-          margin-top: 15px;
-        }
       }
     </style>
   </head>
   <body>
+
+<!--
+     header : choix d'une forme 'jumbotron', une rangée dans un 'container-fluid'
+     les images et textes sont centrés. sm 2+8+0 (centrage du texte) xs 12 (texte seul)
+-->
+
     <header class="jumbotron">
       <div class="container-fluid">
         <div class="row">
           <a class="text-center hidden-xs col-sm-2" href="#"><img src="assets/img/maison.png" alt="logo"></a>
           <h1 class="text-center col-xs-12 col-sm-8">La maison de l'architecte</h1>
         </div>
-    </div>
-  </header>
-    <div class="container-fluid col-md-12">
+      </div>
+    </header>
+
+<!--
+     section : choix de l'imbrication de 'rows' pour satisfaire aux différents formats d'écran ('responsive')
+     md (écrans larges et moyens) : 8+4(12+12)
+     sm (tablettes) : 12 (left) 6+6 (sides)
+     xs (petits écrans) : pas d'imbrication, les éléments s'empilent en occupant toute la largeur.
+-->
+    <section class="container-fluid col-md-12">
       <div class="row">
         <nav>
           <div id="left" class="col-sm-12 col-md-8">
@@ -100,11 +104,17 @@
               <div id="side2" class="col-sm-6 col-md-12">
                 <a href="#"><img src="assets/img/side2.jpg" alt="Notre ambition"></a>
               </div>
-            </div>
-          </div>
-        </nav>
-      </div>
-      <footer class="row text-center">
+             </div>
+           </div>
+         </nav>
+       </div>
+     </section>
+
+<!--
+     footer : pas de modifications autres que 'text-center' et les spécifications css
+-->
+
+     <footer class="text-center">
         <a class="btn btn-primary" href="#"><i class="fa fa-twitter fa-2x"></i></a>
         <a class="btn btn-primary" href="#"><i class="fa fa-facebook fa-2x"></i></a>
         <a class="btn btn-primary" href="#"><i class="fa fa-google-plus fa-2x"></i></a>
